@@ -1,0 +1,60 @@
+import { FieldType, RelationType, defineObject } from 'twenty-sdk/define';
+
+export default defineObject({
+  universalIdentifier: '5fddacdb-23ec-47ea-894e-3ef82dedd30f',
+  nameSingular: 'contactClient',
+  namePlural: 'contactClients',
+  labelSingular: 'Contact-Client',
+  labelPlural: 'Contacts-Clients',
+  icon: 'IconUsersGroup',
+  isSearchable: false,
+  fields: [
+    {
+      universalIdentifier: '04e6b9da-f43f-44cb-8f06-030a79f6c097',
+      type: FieldType.RELATION,
+      name: 'contact',
+      label: 'Contact',
+      isNullable: false,
+      relationTargetObjectMetadataUniversalIdentifier: '9df53838-7867-4054-b745-eba426e75da2',
+      relationTargetFieldMetadataUniversalIdentifier: '4ea70cc8-6d3a-435e-837d-12a4e2013fdd',
+      universalSettings: { relationType: RelationType.MANY_TO_ONE, joinColumnName: 'contactId' },
+    },
+    {
+      universalIdentifier: '5fab288b-5720-40ea-91a3-09dd2f8475c0',
+      type: FieldType.RELATION,
+      name: 'client',
+      label: 'Client',
+      isNullable: false,
+      relationTargetObjectMetadataUniversalIdentifier: '63bca1ef-30f3-4df2-8bd8-4cc218eccd31',
+      relationTargetFieldMetadataUniversalIdentifier: '347f935d-9ed2-4ec4-b141-0d80ad42864a',
+      universalSettings: { relationType: RelationType.MANY_TO_ONE, joinColumnName: 'clientId' },
+    },
+    {
+      universalIdentifier: '589dedca-3707-4680-ac96-2a692505ce3d',
+      type: FieldType.SELECT,
+      name: 'roleContact',
+      label: 'Rôle',
+      isNullable: false,
+      options: [
+        { value: 'DECIDEUR', label: 'Décideur', color: 'red', position: 0 },
+        { value: 'OPERATIONNEL', label: 'Opérationnel', color: 'blue', position: 1 },
+        { value: 'TECHNIQUE', label: 'Technique', color: 'green', position: 2 },
+        { value: 'AUTRE', label: 'Autre', color: 'gray', position: 3 },
+      ],
+    },
+    {
+      universalIdentifier: '4230e5d4-e107-4ae0-a5fb-7191272e97ec',
+      type: FieldType.BOOLEAN,
+      name: 'principal',
+      label: 'Contact principal',
+      defaultValue: false,
+    },
+    {
+      universalIdentifier: '5398e9c5-edba-4ff3-82e6-2188ce53a7ab',
+      type: FieldType.TEXT,
+      name: 'notes',
+      label: 'Notes',
+    },
+  ],
+  labelIdentifierFieldMetadataUniversalIdentifier: '589dedca-3707-4680-ac96-2a692505ce3d',
+});

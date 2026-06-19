@@ -1,0 +1,86 @@
+import { FieldType, RelationType, defineObject } from 'twenty-sdk/define';
+
+export default defineObject({
+  universalIdentifier: '3be422ce-0015-4a0d-a8d0-80afcc8ee013',
+  nameSingular: 'sousTraitant',
+  namePlural: 'sousTraitants',
+  labelSingular: 'Sous-traitant',
+  labelPlural: 'Sous-traitants',
+  icon: 'IconUsers',
+  isSearchable: true,
+  fields: [
+    {
+      universalIdentifier: 'b6f19e8a-fff2-40d0-95e2-cd6acea9b421',
+      type: FieldType.TEXT,
+      name: 'nom',
+      label: 'Nom',
+      isNullable: false,
+    },
+    {
+      universalIdentifier: '7490710c-f097-46d7-b073-d23ed5e8ed35',
+      type: FieldType.TEXT,
+      name: 'prenom',
+      label: 'Prénom',
+    },
+    {
+      universalIdentifier: '7358b086-6515-461a-99f4-97007224068a',
+      type: FieldType.EMAILS,
+      name: 'email',
+      label: 'Email',
+    },
+    {
+      universalIdentifier: 'd02db2d0-cf7e-4455-b66c-eb34183e9848',
+      type: FieldType.PHONES,
+      name: 'telephone',
+      label: 'Téléphone',
+    },
+    {
+      universalIdentifier: 'bfb18284-6d05-4b7a-a8a5-94704d9c5665',
+      type: FieldType.SELECT,
+      name: 'specialite',
+      label: 'Spécialité',
+      options: [
+        { value: 'DEVELOPPEMENT', label: 'Développement', color: 'blue', position: 0 },
+        { value: 'DESIGN', label: 'Design', color: 'pink', position: 1 },
+        { value: 'CONSEIL', label: 'Conseil', color: 'orange', position: 2 },
+        { value: 'DATA', label: 'Data', color: 'purple', position: 3 },
+        { value: 'AUTRE', label: 'Autre', color: 'gray', position: 4 },
+      ],
+    },
+    {
+      universalIdentifier: '5ed6c9b0-b328-4c94-b63a-179550d349b0',
+      type: FieldType.CURRENCY,
+      name: 'tjm',
+      label: 'TJM',
+      universalSettings: { currencyCode: 'EUR' },
+    },
+    {
+      universalIdentifier: '8ae9f39b-15b4-4cf8-b72d-1c01aa784f63',
+      type: FieldType.NUMBER,
+      name: 'nbJoursAlloues',
+      label: 'Jours alloués',
+    },
+    {
+      universalIdentifier: 'ab3ba2cd-a931-4df9-b73c-af10676cc6bf',
+      type: FieldType.NUMBER,
+      name: 'evaluation',
+      label: 'Évaluation (1-5)',
+    },
+    {
+      universalIdentifier: 'e01b2539-8413-411d-b5e5-b4675cb5301f',
+      type: FieldType.RICH_TEXT,
+      name: 'notes',
+      label: 'Notes',
+    },
+    {
+      universalIdentifier: 'd379915b-d140-46a6-82ba-78975762095a',
+      type: FieldType.RELATION,
+      name: 'suiviTemps',
+      label: 'Suivi des temps',
+      relationTargetObjectMetadataUniversalIdentifier: '8e8042c3-6f90-407e-a72c-57d65029cb16',
+      relationTargetFieldMetadataUniversalIdentifier: 'b18c2a6d-5516-4c58-8ffc-3640bd35351c',
+      universalSettings: { relationType: RelationType.ONE_TO_MANY },
+    },
+  ],
+  labelIdentifierFieldMetadataUniversalIdentifier: 'b6f19e8a-fff2-40d0-95e2-cd6acea9b421',
+});

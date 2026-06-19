@@ -1,0 +1,90 @@
+import { FieldType, RelationType, defineObject } from 'twenty-sdk/define';
+
+export default defineObject({
+  universalIdentifier: '20a3e644-1ce4-4f51-9c14-b6df47354506',
+  nameSingular: 'prospect',
+  namePlural: 'prospects',
+  labelSingular: 'Prospect',
+  labelPlural: 'Prospects',
+  icon: 'IconTarget',
+  isSearchable: true,
+  fields: [
+    {
+      universalIdentifier: '3fc68cb8-8486-457b-bd96-6662e1f401af',
+      type: FieldType.TEXT,
+      name: 'nom',
+      label: 'Nom',
+      isNullable: false,
+    },
+    {
+      universalIdentifier: '433dd3f7-d7e3-47be-a5f6-d3f99c4c06e8',
+      type: FieldType.SELECT,
+      name: 'typeStructure',
+      label: 'Type de structure',
+      isNullable: false,
+      options: [
+        { value: 'PME', label: 'PME', color: 'blue', position: 0 },
+        { value: 'ETI', label: 'ETI', color: 'sky', position: 1 },
+        { value: 'COLLECTIVITE', label: 'Collectivité', color: 'green', position: 2 },
+      ],
+    },
+    {
+      universalIdentifier: '39e11966-2940-417b-b2f2-9d04829f736e',
+      type: FieldType.TEXT,
+      name: 'secteurActivite',
+      label: "Secteur d'activité",
+    },
+    {
+      universalIdentifier: 'f37033f1-c1f8-43a5-9cba-c98fbee02bb8',
+      type: FieldType.TEXT,
+      name: 'ville',
+      label: 'Ville',
+    },
+    {
+      universalIdentifier: '1206fe49-3af5-4f3c-8b86-0dbb99b1e422',
+      type: FieldType.TEXT,
+      name: 'codePostal',
+      label: 'Code postal',
+    },
+    {
+      universalIdentifier: '4c93743e-e2ee-4d01-b542-18b18769f2ef',
+      type: FieldType.LINKS,
+      name: 'siteWeb',
+      label: 'Site web',
+    },
+    {
+      universalIdentifier: '3c24ec22-f569-4985-8707-8b8f50f5602d',
+      type: FieldType.SELECT,
+      name: 'source',
+      label: 'Source',
+      options: [
+        { value: 'RESEAU', label: 'Réseau', color: 'blue', position: 0 },
+        { value: 'INBOUND', label: 'Inbound', color: 'green', position: 1 },
+        { value: 'PARRAINAGE', label: 'Parrainage', color: 'orange', position: 2 },
+        { value: 'APPEL_OFFRE', label: "Appel d'offre", color: 'purple', position: 3 },
+      ],
+    },
+    {
+      universalIdentifier: 'ece4f065-e169-424b-b51a-ce863fd60781',
+      type: FieldType.RICH_TEXT,
+      name: 'notes',
+      label: 'Notes',
+    },
+    {
+      universalIdentifier: 'e495665a-97c4-4e53-92f8-8997e915dd6d',
+      type: FieldType.DATE,
+      name: 'datePremierContact',
+      label: 'Date premier contact',
+    },
+    {
+      universalIdentifier: 'daba29f7-2ba3-42cd-b3e7-716c7415d260',
+      type: FieldType.RELATION,
+      name: 'opportunites',
+      label: 'Opportunités',
+      relationTargetObjectMetadataUniversalIdentifier: '0d9121db-3ae3-4783-9541-ba26138d9f02',
+      relationTargetFieldMetadataUniversalIdentifier: '322d7624-0934-4c35-872b-696c73030130',
+      universalSettings: { relationType: RelationType.ONE_TO_MANY },
+    },
+  ],
+  labelIdentifierFieldMetadataUniversalIdentifier: '3fc68cb8-8486-457b-bd96-6662e1f401af',
+});

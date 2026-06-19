@@ -1,0 +1,80 @@
+import { FieldType, RelationType, defineObject } from 'twenty-sdk/define';
+
+export default defineObject({
+  universalIdentifier: 'c72411ee-c938-433a-8444-88950e30800a',
+  nameSingular: 'livrable',
+  namePlural: 'livrables',
+  labelSingular: 'Livrable',
+  labelPlural: 'Livrables',
+  icon: 'IconPackage',
+  fields: [
+    {
+      universalIdentifier: '0695a709-e1f6-4503-b18a-09d3320f4bfa',
+      type: FieldType.TEXT,
+      name: 'nom',
+      label: 'Nom',
+      isNullable: false,
+    },
+    {
+      universalIdentifier: 'f52f5b21-215a-4a72-9c62-69df386df425',
+      type: FieldType.SELECT,
+      name: 'typeLivrable',
+      label: 'Type',
+      isNullable: false,
+      options: [
+        { value: 'LIVRABLE', label: 'Livrable', color: 'blue', position: 0 },
+        { value: 'JALON', label: 'Jalon', color: 'orange', position: 1 },
+        { value: 'RECETTE', label: 'Recette', color: 'green', position: 2 },
+      ],
+    },
+    {
+      universalIdentifier: 'e47cd3c1-a8bb-41f5-ab8e-665d38063194',
+      type: FieldType.SELECT,
+      name: 'statut',
+      label: 'Statut',
+      isNullable: false,
+      options: [
+        { value: 'EN_ATTENTE', label: 'En attente', color: 'gray', position: 0 },
+        { value: 'EN_COURS', label: 'En cours', color: 'blue', position: 1 },
+        { value: 'LIVRE', label: 'Livré', color: 'orange', position: 2 },
+        { value: 'VALIDE', label: 'Validé', color: 'green', position: 3 },
+        { value: 'REFUSE', label: 'Refusé', color: 'red', position: 4 },
+      ],
+    },
+    {
+      universalIdentifier: 'd1180d65-13ee-46fe-aa58-dc84e0e43df9',
+      type: FieldType.DATE,
+      name: 'datePrevue',
+      label: 'Date prévue',
+    },
+    {
+      universalIdentifier: '3dd3fc91-167c-419d-826f-a065caaba9df',
+      type: FieldType.DATE,
+      name: 'dateReelle',
+      label: 'Date réelle',
+    },
+    {
+      universalIdentifier: 'dbb51d78-01cf-4151-a173-542d18a10a88',
+      type: FieldType.TEXT,
+      name: 'validePar',
+      label: 'Validé par',
+    },
+    {
+      universalIdentifier: '89407658-65d7-4339-b3ae-a6375ed356d0',
+      type: FieldType.RICH_TEXT,
+      name: 'notes',
+      label: 'Notes',
+    },
+    {
+      universalIdentifier: '4dc80cfe-aece-474c-8ab9-b9783eae6483',
+      type: FieldType.RELATION,
+      name: 'mission',
+      label: 'Mission',
+      isNullable: false,
+      relationTargetObjectMetadataUniversalIdentifier: '150691d9-e265-4e67-aeaa-a73d7cc6f3e3',
+      relationTargetFieldMetadataUniversalIdentifier: '8505eeae-4cce-4ce7-88d9-07194c4ae25b',
+      universalSettings: { relationType: RelationType.MANY_TO_ONE, joinColumnName: 'missionId' },
+    },
+  ],
+  labelIdentifierFieldMetadataUniversalIdentifier: '0695a709-e1f6-4503-b18a-09d3320f4bfa',
+});

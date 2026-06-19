@@ -1,0 +1,97 @@
+import { FieldType, RelationType, defineObject } from 'twenty-sdk/define';
+
+export default defineObject({
+  universalIdentifier: '2fe4711a-0bcf-4247-90f0-67272ddd5756',
+  nameSingular: 'risqueProjet',
+  namePlural: 'risquesProjet',
+  labelSingular: 'Risque projet',
+  labelPlural: 'Risques projet',
+  icon: 'IconAlertTriangle',
+  isSearchable: true,
+  fields: [
+    {
+      universalIdentifier: 'e0ef98a1-07ed-4e11-aec0-b86ca6ab3007',
+      type: FieldType.TEXT,
+      name: 'titre',
+      label: 'Titre',
+      isNullable: false,
+    },
+    {
+      universalIdentifier: '0c9817f8-8571-41b7-b5da-bc6e29a6bbe5',
+      type: FieldType.TEXT,
+      name: 'description',
+      label: 'Description',
+    },
+    {
+      universalIdentifier: '4e1259a1-9de9-407b-8b73-71773e14c68c',
+      type: FieldType.SELECT,
+      name: 'probabilite',
+      label: 'Probabilité',
+      isNullable: false,
+      options: [
+        { value: 'FAIBLE', label: 'Faible', color: 'green', position: 0 },
+        { value: 'MOYEN', label: 'Moyen', color: 'orange', position: 1 },
+        { value: 'ELEVE', label: 'Élevé', color: 'red', position: 2 },
+      ],
+    },
+    {
+      universalIdentifier: 'e3a4fd77-08a4-43b6-8da8-c83df7905d02',
+      type: FieldType.SELECT,
+      name: 'impact',
+      label: 'Impact',
+      isNullable: false,
+      options: [
+        { value: 'FAIBLE', label: 'Faible', color: 'green', position: 0 },
+        { value: 'MOYEN', label: 'Moyen', color: 'orange', position: 1 },
+        { value: 'ELEVE', label: 'Élevé', color: 'red', position: 2 },
+      ],
+    },
+    {
+      universalIdentifier: '67ec43c0-8ee1-4d85-a762-87ab5a368063',
+      type: FieldType.SELECT,
+      name: 'statut',
+      label: 'Statut',
+      isNullable: false,
+      options: [
+        { value: 'OUVERT', label: 'Ouvert', color: 'red', position: 0 },
+        { value: 'EN_COURS', label: 'En cours', color: 'blue', position: 1 },
+        { value: 'RESOLU', label: 'Résolu', color: 'green', position: 2 },
+        { value: 'ACCEPTE', label: 'Accepté', color: 'gray', position: 3 },
+      ],
+    },
+    {
+      universalIdentifier: '9ab0ac5b-30dc-48d8-873f-4ec18f47e9fe',
+      type: FieldType.TEXT,
+      name: 'mitigation',
+      label: 'Plan de mitigation',
+    },
+    {
+      universalIdentifier: 'd4125f22-bf0a-4d7d-b0df-8dd40bd92da4',
+      type: FieldType.TEXT,
+      name: 'externalId',
+      label: 'ID Clearvio',
+    },
+    {
+      universalIdentifier: '7c2b6e8a-0f3f-4f0a-9d7e-1c9b3a6e2d5e',
+      type: FieldType.SELECT,
+      name: 'derniereSyncOrigine',
+      label: 'Dernière sync depuis',
+      description: 'Anti-boucle: indique si la dernière écriture vient de Clearvio (pour ne pas la repousser)',
+      options: [
+        { value: 'NEVARIO', label: 'Nevario', color: 'blue', position: 0 },
+        { value: 'CLEARVIO', label: 'Clearvio', color: 'orange', position: 1 },
+      ],
+    },
+    {
+      universalIdentifier: 'd5719ff5-8064-4807-b867-efefe63c14e2',
+      type: FieldType.RELATION,
+      name: 'mission',
+      label: 'Mission',
+      isNullable: false,
+      relationTargetObjectMetadataUniversalIdentifier: '150691d9-e265-4e67-aeaa-a73d7cc6f3e3',
+      relationTargetFieldMetadataUniversalIdentifier: 'fee7ab7a-5498-44c5-8607-898a774f6809',
+      universalSettings: { relationType: RelationType.MANY_TO_ONE, joinColumnName: 'missionId' },
+    },
+  ],
+  labelIdentifierFieldMetadataUniversalIdentifier: 'e0ef98a1-07ed-4e11-aec0-b86ca6ab3007',
+});

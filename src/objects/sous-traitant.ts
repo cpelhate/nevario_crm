@@ -81,6 +81,15 @@ export default defineObject({
       relationTargetFieldMetadataUniversalIdentifier: 'b18c2a6d-5516-4c58-8ffc-3640bd35351c',
       universalSettings: { relationType: RelationType.ONE_TO_MANY },
     },
+    {
+      universalIdentifier: '312dffad-a941-43b4-a321-a892237affa2',
+      type: FieldType.RELATION,
+      name: 'taches',
+      label: 'Tâches assignées',
+      relationTargetObjectMetadataUniversalIdentifier: 'a62c6875-9ac0-4d27-bbd6-e888a5d00077',
+      relationTargetFieldMetadataUniversalIdentifier: '30ac0617-2c4b-4165-ac02-f9c7fa281880',
+      universalSettings: { relationType: RelationType.ONE_TO_MANY },
+    },
   ],
   labelIdentifierFieldMetadataUniversalIdentifier: 'b6f19e8a-fff2-40d0-95e2-cd6acea9b421',
 });

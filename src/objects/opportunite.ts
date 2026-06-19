@@ -87,7 +87,7 @@ export default defineObject({
       label: 'Prospect',
       relationTargetObjectMetadataUniversalIdentifier: '20a3e644-1ce4-4f51-9c14-b6df47354506',
       relationTargetFieldMetadataUniversalIdentifier: 'daba29f7-2ba3-42cd-b3e7-716c7415d260',
-      universalSettings: { relationType: RelationType.MANY_TO_ONE, joinColumnName: 'notesId' },
+      universalSettings: { relationType: RelationType.MANY_TO_ONE, joinColumnName: 'prospectId' },
     },
     {
       universalIdentifier: '61c2012b-02fc-41df-80f8-cb935f721951',

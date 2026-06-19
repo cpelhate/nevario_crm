@@ -56,5 +56,5 @@ export default defineObject({
       label: 'Notes',
     },
   ],
-  labelIdentifierFieldMetadataUniversalIdentifier: '589dedca-3707-4680-ac96-2a692505ce3d',
+  labelIdentifierFieldMetadataUniversalIdentifier: '5398e9c5-edba-4ff3-82e6-2188ce53a7ab',
 });

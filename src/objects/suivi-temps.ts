@@ -60,5 +60,5 @@ export default defineObject({
       universalSettings: { relationType: RelationType.MANY_TO_ONE, joinColumnName: 'sousTraitantId' },
     },
   ],
-  labelIdentifierFieldMetadataUniversalIdentifier: '9c3a17f2-d68c-467b-8175-83339328d445',
+  labelIdentifierFieldMetadataUniversalIdentifier: 'a39997cc-0eee-41d7-a9b1-3ebb32db4f83',
 });

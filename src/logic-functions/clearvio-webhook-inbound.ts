@@ -118,7 +118,8 @@ async function deleteByExternalId(
 }
 
 /**
- * Receives Clearvio's outbound webhooks (task.*/risk.*). Verifies the HMAC
+ * Receives Clearvio's outbound webhooks (task.created/updated/deleted,
+ * risk.created/updated/deleted). Verifies the HMAC
  * signature, then upserts the matching Tache/RisqueProjet with
  * derniereSyncOrigine="CLEARVIO" so the outbound sync functions know to
  * skip pushing this change straight back (anti-loop).
